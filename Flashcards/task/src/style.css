@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    background: url("world.png") no-repeat center;
+    background-size: 60%;
+
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.quiz-area {
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-gap: 25px;
+    perspective: 1000px;
+}
+
+.card-inside p {
+    padding: 15px;
+}
+
+.title {
+    border-radius: 25px;
+    text-align: center;
+    grid-column: span 3;
+    margin: 10px 10px 20px;
+    color: #2f4f4f;
+}
+
+.card-container {
+    width: 130px;
+    height: 130px;
+    font-weight: bold;
+    text-align: center;
+    font-size: 1.2em;
+    position: relative;
+}
+
+.card-inside {
+    height: 100%;
+    width: 100%;
+    transform-style: preserve-3d;
+    transition: all 1s linear;
+}
+
+.card-inside:hover {
+    transform: rotateY(180deg);
+}
+
+.card {
+    border-radius: 25px;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+
+.question {
+    color: #fe7c01;
+    background-color: #f9eee5;
+    z-index: 1;
+    backface-visibility: hidden;
+}
+
+.answer {
+    color: #f9eee5;
+    background-color: #fe7c01;
+    transform: rotateY(180deg);
+    z-index: -1;
+}
